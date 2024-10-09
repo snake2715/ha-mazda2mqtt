@@ -29,9 +29,7 @@ options:
 schema:
   mazda_username: str
   mazda_password: str
-  mazda_region:
-    type: str
-    description: "Enter your region code (e.g., 'MNAO' for America, 'MME' for Europe, 'MJO' for Japan)."
+  mazda_region: str
   mqtt_host: str
   mqtt_port: int
   mqtt_user: str
