@@ -1,7 +1,7 @@
 {
     "name": "Mazda2MQTT Add-on Repository",
     "url": "https://github.com/scruysberghs/ha-mazda2mqtt",
-    "maintainer": "Jules Cruysberghs",
+    "maintainer": "SEC",
     "addons": [
       {
         "name": "Mazda2MQTT",
