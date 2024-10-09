@@ -23,6 +23,10 @@ print(f"Region: {os.getenv('MAZDA_REGION')}")
 # https://blog.gitguardian.com/how-to-handle-secrets-in-python/
 load_dotenv()
 
+print(f"Username: {os.getenv('MAZDA_USERNAME')}")
+print(f"Password: {os.getenv('MAZDA_PASSWORD')}")
+print(f"Region: {os.getenv('MAZDA_REGION')}")
+
 # https://www.emqx.com/en/blog/how-to-use-mqtt-in-python
 broker = os.getenv("MQTT_BROKER", "localhost")
 try:
@@ -72,7 +76,7 @@ async def main():
     # https://github.com/alanzchen/mymazda-relay/blob/main/app.py#L14
     username = os.getenv("MAZDA_USERNAME")
     password = os.getenv("MAZDA_PASSWORD")
-    region = os.getenv("MAZDA_REGION", "MNAO")
+    region = os.getenv("MAZDA_REGION", "MME")
     vehicle_id = None  # os.getenv("MAZDA_ID")
 
     mazda = MazdaAPI(username, password, region)
