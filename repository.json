@@ -1,0 +1,39 @@
+{
+    "name": "Mazda2MQTT Add-on Repository",
+    "url": "https://github.com/scruysberghs/ha-mazda2mqtt",
+    "maintainer": "Jules Cruysberghs",
+    "addons": [
+      {
+        "name": "Mazda2MQTT",
+        "slug": "mazda2mqtt",
+        "description": "Mazda2MQTT integration for Home Assistant",
+        "version": "1.0",
+        "arch": ["armv7", "aarch64", "amd64", "i386"],
+        "url": "https://github.com/scruysberghs/ha-mazda2mqtt",
+        "startup": "application",
+        "boot": "auto",
+        "options": {
+          "mazda_username": "",
+          "mazda_password": "",
+          "mazda_region": "MNAO",
+          "mqtt_host": "core-mosquitto",
+          "mqtt_port": 1883,
+          "mqtt_user": "",
+          "mqtt_password": ""
+        },
+        "schema": {
+          "mazda_username": "str",
+          "mazda_password": "str",
+          "mazda_region": {
+            "type": "select",
+            "options": ["MNAO", "MME", "MJO"]
+          },
+          "mqtt_host": "str",
+          "mqtt_port": "int",
+          "mqtt_user": "str",
+          "mqtt_password": "str"
+        }
+      }
+    ]
+  }
+  
