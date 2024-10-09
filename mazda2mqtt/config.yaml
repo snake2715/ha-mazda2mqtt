@@ -30,7 +30,7 @@ schema:
   mazda_username: str
   mazda_password: str
   mazda_region:
-    type: select
+    type: list
     options:
       - MNAO
       - MME
