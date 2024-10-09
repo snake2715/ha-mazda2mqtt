@@ -1,0 +1,41 @@
+name: Mazda2MQTT
+version: "1.0"
+slug: mazda2mqtt
+description: A Home Assistant add-on to run Mazda2MQTT with configurable regions and MQTT settings.
+arch:
+  - aarch64
+  - amd64
+  - armv7
+  - i386
+startup: application
+init: false
+boot: auto
+options:
+  mazda_username: ""
+  mazda_password: ""
+  mazda_region:
+    value: "MNAO"
+    description: "Select your region."
+    selector:
+      select:
+        options:
+          - MNAO
+          - MME
+          - MJO
+  mqtt_host: "core-mosquitto"
+  mqtt_port: 1883
+  mqtt_user: ""
+  mqtt_password: ""
+schema:
+  mazda_username: str
+  mazda_password: str
+  mazda_region:
+    type: select
+    options:
+      - MNAO
+      - MME
+      - MJO
+  mqtt_host: str
+  mqtt_port: int
+  mqtt_user: str
+  mqtt_password: str
