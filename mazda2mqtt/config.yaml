@@ -13,15 +13,7 @@ boot: auto
 options:
   mazda_username: ""
   mazda_password: ""
-  mazda_region:
-    value: "MNAO"
-    description: "Select your region."
-    selector:
-      select:
-        options:
-          - MNAO
-          - MME
-          - MJO
+  mazda_region: "MME"
   mqtt_host: "core-mosquitto"
   mqtt_port: 1883
   mqtt_user: ""

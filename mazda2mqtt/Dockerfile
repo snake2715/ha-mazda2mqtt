@@ -26,7 +26,7 @@ ENV MQTT_USER ""
 ENV MQTT_PASSWORD ""
 ENV MAZDA_USERNAME ""
 ENV MAZDA_PASSWORD ""
-ENV MAZDA_REGION "MNAO"
+ENV MAZDA_REGION "MME"
 
 # Command to run the Mazda app
 CMD ["./venv/bin/python3", "./home-assistant-mazda-main/custom_components/mazda/app.py"]
