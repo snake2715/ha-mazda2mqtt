@@ -26,3 +26,20 @@ schema:
   mqtt_port: int
   mqtt_user: str
   mqtt_password: str
+
+# Pass options as environment variables to the container
+environment:
+  - name: MAZDA_USERNAME
+    value: "{options.mazda_username}"
+  - name: MAZDA_PASSWORD
+    value: "{options.mazda_password}"
+  - name: MAZDA_REGION
+    value: "{options.mazda_region}"
+  - name: MQTT_BROKER
+    value: "{options.mqtt_host}"
+  - name: MQTT_PORT
+    value: "{options.mqtt_port}"
+  - name: MQTT_USER
+    value: "{options.mqtt_user}"
+  - name: MQTT_PASSWORD
+    value: "{options.mqtt_password}"
