@@ -16,6 +16,9 @@ from pymazda.exceptions import (
     MazdaException,
     MazdaTokenExpiredException,
 )
+print(f"Username: {os.getenv('MAZDA_USERNAME')}")
+print(f"Password: {os.getenv('MAZDA_PASSWORD')}")
+print(f"Region: {os.getenv('MAZDA_REGION')}")
 
 # https://blog.gitguardian.com/how-to-handle-secrets-in-python/
 load_dotenv()
