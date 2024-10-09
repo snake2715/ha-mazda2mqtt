@@ -28,18 +28,12 @@ schema:
   mqtt_password: str
 
 # Pass options as environment variables to the container
+# Correct environment mapping as a dictionary
 environment:
-  - name: MAZDA_USERNAME
-    value: "{options.mazda_username}"
-  - name: MAZDA_PASSWORD
-    value: "{options.mazda_password}"
-  - name: MAZDA_REGION
-    value: "{options.mazda_region}"
-  - name: MQTT_BROKER
-    value: "{options.mqtt_host}"
-  - name: MQTT_PORT
-    value: "{options.mqtt_port}"
-  - name: MQTT_USER
-    value: "{options.mqtt_user}"
-  - name: MQTT_PASSWORD
-    value: "{options.mqtt_password}"
+  MAZDA_USERNAME: "{options.mazda_username}"
+  MAZDA_PASSWORD: "{options.mazda_password}"
+  MAZDA_REGION: "{options.mazda_region}"
+  MQTT_BROKER: "{options.mqtt_host}"
+  MQTT_PORT: "{options.mqtt_port}"
+  MQTT_USER: "{options.mqtt_user}"
+  MQTT_PASSWORD: "{options.mqtt_password}"
