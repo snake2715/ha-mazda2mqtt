@@ -13,20 +13,12 @@ RUN apt-get update && \
 RUN wget https://github.com/runDMCA/home-assistant-mazda/archive/refs/heads/main.zip && \
     unzip main.zip && rm -rf main.zip
 
-# Copy the local app.py into the correct directory
+# Copy the local app.py and run.sh into the container
 COPY app.py /app/home-assistant-mazda-main/custom_components/mazda/app.py
+COPY run.sh /app/run.sh
 
-# Set shell to ensure the correct environment for running scripts
-SHELL ["/bin/ash", "-c"]
+# Set permissions and set the entry point
+RUN chmod +x /app/run.sh
 
-# Set environment variables from the Home Assistant configuration (these will be set dynamically)
-ENV MQTT_BROKER core-mosquitto
-ENV MQTT_PORT 1883
-ENV MQTT_USER ""
-ENV MQTT_PASSWORD ""
-ENV MAZDA_USERNAME ""
-ENV MAZDA_PASSWORD ""
-ENV MAZDA_REGION "MME"
-
-# Command to run the Mazda app
-CMD ["./venv/bin/python3", "./home-assistant-mazda-main/custom_components/mazda/app.py"]
+# Use the run.sh script as the entry point
+CMD ["/app/run.sh"]
