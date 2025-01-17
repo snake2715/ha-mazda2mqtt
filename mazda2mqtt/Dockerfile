@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM python:3.11-slim
 
 # Set working directory inside the container
 WORKDIR /app
@@ -10,7 +10,7 @@ RUN apt-get update && \
     ./venv/bin/python3 -m pip install aiohttp paho-mqtt cryptography python-dotenv
 
 # Download the Mazda integration from the external GitHub repo
-RUN wget https://github.com/runDMCA/home-assistant-mazda/archive/refs/heads/main.zip && \
+RUN wget https://github.com/snake2715/home-assistant-mazda/archive/refs/heads/main.zip && \
     unzip main.zip && rm -rf main.zip
 
 # Copy the local app.py and run.sh into the container
