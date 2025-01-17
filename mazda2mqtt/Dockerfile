@@ -13,12 +13,14 @@ RUN apt-get update && \
 RUN wget https://github.com/snake2715/home-assistant-mazda/archive/refs/heads/main.zip && \
     unzip main.zip && rm -rf main.zip
 
-# Copy the local app.py and run.sh into the container
-COPY app.py /app/home-assistant-mazda-main/custom_components/mazda/app.py
-COPY run.sh /app/run.sh
+# Create necessary directories
+RUN mkdir -p /app
 
-# Set permissions and set the entry point
+# Copy the local files into the container
+COPY . /app/
+
+# Set permissions
 RUN chmod +x /app/run.sh
 
 # Use the run.sh script as the entry point
-CMD ["/app/run.sh"]
+CMD ["/bin/bash", "/app/run.sh"]
