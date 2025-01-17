@@ -1,18 +1,17 @@
 {
     "name": "Mazda2MQTT Add-on Repository",
-    "url": "https://github.com/snake2715/ha-mazda2mqtt.git",
+    "url": "https://github.com/snake2715/ha-mazda2mqtt",
     "maintainer": "SEC",
     "addons": [
       {
         "name": "Mazda2MQTT",
         "slug": "mazda2mqtt",
         "description": "Mazda2MQTT integration for Home Assistant",
-        "version": "1.0",
+        "version": "2.0.0",
         "arch": ["armv7", "aarch64", "amd64", "i386"],
-        "url": "https://github.com/snake2715/ha-mazda2mqtt.git",
+        "url": "https://github.com/snake2715/ha-mazda2mqtt",
         "startup": "application",
         "boot": "auto"
       }
     ]
-  }
-  
+}
