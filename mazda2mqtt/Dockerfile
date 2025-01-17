@@ -9,18 +9,16 @@ RUN apt-get update && \
     python3 -m venv venv && \
     ./venv/bin/python3 -m pip install aiohttp paho-mqtt cryptography python-dotenv
 
-# Download the Mazda integration from the external GitHub repo
+# Download the Mazda integration from your GitHub repo
 RUN wget https://github.com/snake2715/home-assistant-mazda/archive/refs/heads/main.zip && \
     unzip main.zip && rm -rf main.zip
 
-# Create necessary directories
-RUN mkdir -p /app
+# Copy the local app.py and run.sh into the container
+COPY app.py /app/home-assistant-mazda-main/custom_components/mazda/app.py
+COPY run.sh /app/run.sh
 
-# Copy the local files into the container
-COPY . /app/
-
-# Set permissions
+# Set permissions and set the entry point
 RUN chmod +x /app/run.sh
 
 # Use the run.sh script as the entry point
-CMD ["/bin/bash", "/app/run.sh"]
+CMD ["/app/run.sh"]
