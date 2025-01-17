@@ -7,7 +7,7 @@ services:
       - MQTT_PORT=${MQTT_PORT:-1883}
       - MQTT_USER=${MQTT_USER}
       - MQTT_PASSWORD=${MQTT_PASSWORD}
-      - MAZDA_USERNAME=${MAZDA_USERNAME}
+      - MAZDA_EMAIL=${MAZDA_EMAIL}           # Changed from MAZDA_USERNAME
       - MAZDA_PASSWORD=${MAZDA_PASSWORD}
       - MAZDA_REGION=${MAZDA_REGION}
     restart: unless-stopped

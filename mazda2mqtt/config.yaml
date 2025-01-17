@@ -1,5 +1,5 @@
 name: Mazda2MQTT
-version: "1.0"
+version: "2.0.0"
 slug: mazda2mqtt
 description: A Home Assistant add-on to run Mazda2MQTT with configurable regions and MQTT settings.
 arch:
@@ -11,15 +11,16 @@ startup: application
 init: false
 boot: auto
 options:
-  mazda_username: ""
+  mazda_email: ""      # Changed from mazda_username
   mazda_password: ""
   mazda_region: "MME"
   mqtt_host: "core-mosquitto"
   mqtt_port: 1883
   mqtt_user: ""
   mqtt_password: ""
+
 schema:
-  mazda_username: str
+  mazda_email: str     # Changed from mazda_username
   mazda_password: str
   mazda_region: str
   mqtt_host: str
@@ -27,10 +28,8 @@ schema:
   mqtt_user: str
   mqtt_password: str
 
-# Pass options as environment variables to the container
-# Correct environment mapping as a dictionary
 environment:
-  MAZDA_USERNAME: "{options.mazda_username}"
+  MAZDA_EMAIL: "{options.mazda_email}"    # Changed to match app.py
   MAZDA_PASSWORD: "{options.mazda_password}"
   MAZDA_REGION: "{options.mazda_region}"
   MQTT_BROKER: "{options.mqtt_host}"
